@@ -1,9 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker "alpine"
+    }
     stages {
-        stage('Stage 1') {
+        stage("Build") {
             steps {
-                echo 'Hello world!'
+                sh "hostname"
             }
         }
     }
